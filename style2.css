@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    
+}
+
+/* Default */
+h1, h2, h3, h4, h5, h6, p, a {
+    font-family: "Montserrat", Helvetica, Arial, sans-serif; 
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+body {
+    margin-top: 80px;
+    height: calc(100vh - 80px);
+}
+
+.navbar {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 999;
+}
+
+.navbar-container {
+    height: 100%;
+}
+
+.logo-and-toggler {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    color: white;
+    font-size: 2.2rem;
+    letter-spacing: 0.3rem;
+}
+
+.navmenu-toggler {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+    cursor:pointer;
+}
+
+.navmenu-toggler:hover {
+    color: black;
+    background-color: white;
+    transition: all 0.4s ease;
+}
+
+.collapsable-nav{
+    overflow:scroll;
+    transition: all 0.5s ease;
+}
+
+.nav-collapse {
+    height: 0;
+}
+
+.nav-show {
+    height: 180px;
+}
+
+.navmenu {
+    background-color: rgb(86, 86, 86);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.nav-item {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+}
+
+.nav-link{
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link:hover {
+    background-color: grey;
+}
+
+.wave {
+    position: fixed;
+    border: 2px solid rgba(0, 0, 0, 0.134);
+    border-radius: 50%;
+}
+
+.wave-1 {
+    height: 700px;
+    width: 750px;
+    transform-origin: 50% 45%;
+    top: -550px;
+    left: -350px;
+    animation: drift 20000ms infinite linear;
+}
+
+.wave-2 {
+    height: 750px;
+    width: 700px;
+    transform-origin: 45 50%;
+    top: -550px;
+    left: -420px;
+    animation: drift 22000ms infinite linear;
+}
+
+.main-container {
+   width: 100%;
+   margin: auto;
+}
+
+.img-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 100%;
+}
+
+
+.img-container img{
+    width: 100%;
+    height: auto;
+}
+
+.img-container img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.lightbox {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease-in;
+    width: 100%;
+}
+
+.lightbox.show{
+    background-color: rgba(0,0,0, 0.70);
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+.lightbox img {
+    height: auto;
+    width: 95%;
+}
+
+.lightbox .close-lightbox{
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+}
+
+.lightbox .close-lightbox i {
+    color: white;
+    text-align: center;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+/* For Landscape Tablet and Up  */
+@media only screen and (min-width: 768px) {
+    body {
+    }
+
+    /* Navbar on Desktop */
+    .navbar {
+    }
+
+    .navbar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        width: 70%;
+        margin: auto;
+    }
+
+    .navmenu-toggler {
+        display: none;
+    }
+
+    .collapsable-nav {
+        overflow: visible;
+        width: 40%;
+        height: 100%;
+    }
+
+    .navmenu {
+        flex-direction: row;
+        background-color: inherit;
+    }
+
+    .wave-1 {
+        top: -400px;
+        left: -250px;
+    }
+    
+    .wave-2 {
+        top: -400px;
+        left: -350px;
+    }
+
+    /* Main Content */
+    main {
+        height: 100%;
+    }
+    
+    .main-container {
+    }
+
+    .lightbox img {
+        height: 90%;
+        width: auto;
+    }
+
+}
+
+
+@keyframes slide-y {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+@keyframes slide-x {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes drift {
+    from { transform: rotate(0deg); }
+    from { transform: rotate(360deg); }
+  }
