@@ -251,14 +251,6 @@ body {
     background-color: rgb(31, 31, 31);
   }
 
-  main {
-    /* height: 100%; */
-    /* min-height: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
-  }
-
   /* Main Content */
   .main-container {
     height: fit-content;
@@ -267,7 +259,6 @@ body {
     padding: 60px 40px;
     flex-direction: row;
     align-items: start;
-    /* align-items: stretch; */
   }
 
   .img-container {

@@ -1,3 +1,4 @@
+// Navbar Menu Toggler
 const navMenuToggler = document.querySelector(".navmenu-toggler");
 const collapsableNav = document.querySelector(".collapsable-nav");
 
@@ -5,12 +6,7 @@ navMenuToggler.addEventListener("click", () => {
   collapsableNav.classList.toggle("nav-show");
 });
 
-// let vh = Math.max(
-//   document.documentElement.clientHeight || 0,
-//   window.innerHeight || 0
-// );
-// console.log(vh);
-
+// Light Box
 const lightbox = document.getElementById("lightbox");
 const imageContainer = document.querySelector(".img-container");
 
@@ -27,5 +23,24 @@ imageContainer.addEventListener("click", (e) => {
 lightbox.addEventListener("click", (e) => {
   if (!e.target.hasAttribute("src")) {
     lightbox.classList.remove("show");
+  }
+});
+
+// Skeleton Loading
+const imgSkeleton = document.querySelectorAll(".img-skeleton");
+imgSkeleton.forEach((skeleton) => {
+  const img = skeleton.querySelector("img");
+
+  function loaded() {
+    skeleton.classList.add("loaded");
+    setTimeout(() => {
+      skeleton.classList.remove("img-skeleton");
+    }, 1000);
+  }
+
+  if (img.complete) {
+    loaded();
+  } else {
+    img.addEventListener("load", loaded);
   }
 });

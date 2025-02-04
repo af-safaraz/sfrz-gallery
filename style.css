@@ -281,7 +281,12 @@ body {
   display: inline-block;
   animation: 30s slide-x infinite linear;
   height: 85%;
+  /* width: 2000px; */
 }
+
+/* .img-wrapper {
+  height: 100%;
+} */
 
 .img-slider img {
   height: 100%;
