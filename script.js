@@ -9,22 +9,23 @@ navMenuToggler.addEventListener("click", () => {
 // Light Box
 const lightbox = document.getElementById("lightbox");
 const imageContainer = document.querySelector(".img-container");
+if (lightbox) {
+  imageContainer.addEventListener("click", (e) => {
+    const image = e.target.closest("img");
+    if (image) {
+      lightbox.innerHTML =
+        '<div class="close-lightbox"><i class="fa-solid fa-xmark fa-2xl"></i></div>' +
+        image.outerHTML;
+      lightbox.classList.toggle("show");
+    }
+  });
 
-imageContainer.addEventListener("click", (e) => {
-  const image = e.target.closest("img");
-  if (image) {
-    lightbox.innerHTML =
-      '<div class="close-lightbox"><i class="fa-solid fa-xmark fa-2xl"></i></div>' +
-      image.outerHTML;
-    lightbox.classList.toggle("show");
-  }
-});
-
-lightbox.addEventListener("click", (e) => {
-  if (!e.target.hasAttribute("src")) {
-    lightbox.classList.remove("show");
-  }
-});
+  lightbox.addEventListener("click", (e) => {
+    if (!e.target.hasAttribute("src")) {
+      lightbox.classList.remove("show");
+    }
+  });
+}
 
 // Skeleton Loading
 const imgSkeleton = document.querySelectorAll(".img-skeleton");
