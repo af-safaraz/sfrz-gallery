@@ -1,7 +1,7 @@
 .main-container {
   height: fit-content;
   width: 100%;
-  padding: 0 30px 60px 30px;
+  padding: 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -111,6 +111,17 @@
   height: 100%;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 30px;
+  margin: auto;
+  max-width: 1200px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
 /* For Landscape Tablet and Up  */
 @media only screen and (min-width: 768px) {
   /* Main Content */
@@ -118,7 +129,7 @@
     height: fit-content;
     max-width: 1200px;
     margin: auto;
-    padding: 60px 40px;
+    padding: 60px 40px 10px 40px;
     flex-direction: row;
     align-items: start;
   }
@@ -164,5 +175,10 @@
     margin-top: 24px;
     font-size: 16px;
     line-height: 27.2px;
+  }
+
+  .footer-container {
+    padding: 40px;
+    font-size: 0.8rem;
   }
 }
